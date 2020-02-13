@@ -96,12 +96,12 @@
     justify-content: space-evenly;
 
     &:hover {
-      background-color: $secondary-light-gray;
+      background-color: $secondary-gray;
     }
   }
 
   &__item--selected {
-    background-color: $primary-light-gray;
+    background-color: $primary-light-blue;
   }
 
   &__item-row {
