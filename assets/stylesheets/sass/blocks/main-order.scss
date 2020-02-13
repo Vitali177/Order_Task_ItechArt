@@ -1,0 +1,13 @@
+.order {
+  height: calc(100vh - #{$header-height} - #{$footer-height});
+  background: $primary-white;
+
+  @import './main-order-blocks/order__main-info';
+  @import './main-order-blocks/order__address';
+  @import './main-order-blocks/order__processor';
+  @import './main-order-blocks/order__line-items';
+
+  @media(max-width: $mobile-width) {
+    height: 100%;
+  }  
+}

@@ -1,0 +1,15 @@
+footer {
+  height: $footer-height;
+  background: $footer-color;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  img {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+}

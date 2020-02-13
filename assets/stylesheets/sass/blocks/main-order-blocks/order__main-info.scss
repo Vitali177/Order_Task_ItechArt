@@ -1,0 +1,87 @@
+&__main-info {
+  height: 30%;
+  min-height: 220px;
+  padding: 0 20px;
+  background: $primary-light-gray;
+  box-shadow: 0px 2px 5px $primary-gray;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+&__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+&__cost {
+  text-align: right;
+  font-weight: 300;
+
+  span {
+    font-size: 15px;
+  }
+}
+
+&__main-info-list {
+  list-style-type: none;
+}
+
+&__name, &__customer, &__ordered, &__shipped {
+  font-weight: 300;
+}
+
+&__customer, &__ordered, &__shipped {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: $primary-light-black;
+}
+
+&__buttons {
+  margin-bottom: 10px;
+  margin-top: 35px;
+  display: flex;
+}
+
+&__button-address, &__button-processor {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid $primary-blue;
+  cursor: pointer;
+}
+
+&__button-address {
+  background: url('../../img/button-address.png') center center no-repeat;
+  background-size: 75%;
+}
+
+&__button-processor {
+  margin-left: 25px;
+  background: url('../../img/button-processor.png') center center no-repeat;
+  background-size: 75%;
+}
+
+&__button-address--selected, &__button-processor--selected {
+  background-color: $primary-blue;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 44px;
+    height: 3px;
+    width: 100%;
+    background-color: $primary-blue;
+    cursor: default;
+  }
+}
+
+&__button-address--selected {
+  background-image: url('../../img/button-address--selected.png');
+}
+
+&__button-processor--selected {
+  background-image: url('../../img/button-processor--selected.png');
+}
