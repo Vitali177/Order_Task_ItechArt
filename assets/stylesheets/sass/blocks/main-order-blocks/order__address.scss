@@ -1,5 +1,5 @@
 &__address {
-  height: 25%;
+  height: 24%;
   min-height: 175px;
   padding: 0 20px;
   border-bottom: 1px solid $secondary-blue;
@@ -13,7 +13,7 @@
   }
 }
 
-&__address-heading {
+&__address-heading, .address-processor-heading {
   padding: 25px 0 0 10px;
   height: 50px;
   border-bottom: 1px solid $primary-gray;

@@ -4,7 +4,6 @@
     margin: 0 auto;
     padding-left: $order-list-width; // while order-list is open
     box-shadow: 5px 0px 10px #afadad;
-    overflow: auto;
 
     @media(max-width: $tablet-width) {
         padding: 0;

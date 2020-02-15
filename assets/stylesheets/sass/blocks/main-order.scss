@@ -1,6 +1,7 @@
 .order {
   height: calc(100vh - #{$header-height} - #{$footer-height});
   background: $primary-white;
+  overflow: auto;
 
   @import './main-order-blocks/order__main-info';
   @import './main-order-blocks/order__address';

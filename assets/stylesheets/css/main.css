@@ -18,8 +18,7 @@ hr {
   max-width: 1300px;
   margin: 0 auto;
   padding-left: 255px;
-  box-shadow: 5px 0px 10px #afadad;
-  overflow: auto; }
+  box-shadow: 5px 0px 10px #afadad; }
   @media (max-width: 1075px) {
     .content-wrapper {
       padding: 0; } }
@@ -177,7 +176,8 @@ hr {
 
 .order {
   height: calc(100vh - 30px - 30px);
-  background: #FFFFFF; }
+  background: #FFFFFF;
+  overflow: auto; }
   .order__main-info {
     height: 30%;
     min-height: 220px;
@@ -236,7 +236,7 @@ hr {
   .order__button-processor--selected {
     background-image: url("../../img/button-processor--selected.png"); }
   .order__address {
-    height: 25%;
+    height: 24%;
     min-height: 175px;
     padding: 0 20px;
     border-bottom: 1px solid #cadeef;
@@ -246,13 +246,13 @@ hr {
       .order__address {
         min-height: 325px;
         padding: 0; } }
-  .order__address-heading {
+  .order__address-heading, .order .address-processor-heading {
     padding: 25px 0 0 10px;
     height: 50px;
     border-bottom: 1px solid #afadad;
     font-weight: 500; }
     @media (max-width: 580px) {
-      .order__address-heading {
+      .order__address-heading, .order .address-processor-heading {
         padding: 18px 0 0 10px; } }
   .order__address-list {
     margin-top: 15px;
@@ -282,7 +282,41 @@ hr {
         display: block;
         margin: 0 20px; } }
   .order__processor {
+    height: 24%;
+    min-height: 225px;
+    padding: 0 20px;
+    border-bottom: 1px solid #cadeef;
+    display: flex;
+    flex-direction: column;
     display: none; }
+  .order__processor-wrapper-heading {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 0 0 10px; }
+  .order__processor-list-heading, .order__processor-picture-heading {
+    flex: 1;
+    font-weight: 500;
+    font-size: 14px; }
+  .order__processor-wrapper-info {
+    display: flex;
+    padding: 10px 0 0 10px;
+    align-items: flex-start; }
+  .order__processor-list {
+    flex: 1;
+    margin: 0 0 0 10px; }
+    .order__processor-list li {
+      margin-bottom: 5px; }
+  .order__processor-item--telephone {
+    color: #397cb3;
+    cursor: pointer; }
+  .order__processor-picture-wrapper {
+    flex: 1; }
+  .order__processor-picture {
+    width: 125px;
+    height: 125px;
+    background: url("../../img/button-processor--selected.png") center center no-repeat;
+    background-size: contain;
+    background-color: #e7f0f8; }
   .order__line-items {
     height: 45%;
     min-height: 250px;
