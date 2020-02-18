@@ -1,9 +1,26 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+}
 
 body {
   font-family: sans-serif, serif;
   height: 100vh;
-  background: linear-gradient(#aac3e2, #e6ebef); }
+  background: linear-gradient(#aac3e2, #e6ebef); 
+}
+
+.content-wrapper {
+  position: relative;  /* for order-list */
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-left: var(--order-list-width); /* while order-list is open */
+  box-shadow: 5px 0px 10px #afadad;  
+}
+
+@media(max-width: 1075px) {
+  
+  .content-wrapper {
+    padding: 0;
+  }
+}

@@ -1,9 +1,17 @@
-footer {
-  height: 40px;
-  background: #2f3b47;
+.footer {
+  height: var(--footer-height);
+  background: var(--footer-color);
+  position: relative;
+  z-index: 1;
+
   display: flex;
   justify-content: flex-end;
-  align-items: center; }
-  footer img {
-    margin-right: 20px;
-    cursor: pointer; }
+  align-items: center;  
+}
+
+.footer img {
+  height: 25px;
+  width: 25px;
+  margin-right: 20px;
+  cursor: pointer;
+}
