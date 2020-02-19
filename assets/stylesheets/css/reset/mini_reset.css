@@ -10,6 +10,10 @@ body {
   background: linear-gradient(#aac3e2, #e6ebef); 
 }
 
+h3 {
+  font-weight: 200;
+}
+
 .content-wrapper {
   position: relative;  /* for order-list */
   max-width: 1300px;
