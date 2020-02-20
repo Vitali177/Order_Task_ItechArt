@@ -146,6 +146,9 @@
 /* footer of order-list */
 
 .order-list__footer {
+  position: fixed;
+  bottom: 0;
+  width: var(--order-list-width);
   height: 30px;
   background: var(--footer-color);
   border-right: 1px solid var(--primary-white);
