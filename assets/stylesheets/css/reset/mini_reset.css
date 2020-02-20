@@ -22,6 +22,10 @@ h3 {
   box-shadow: 5px 0px 10px #afadad;  
 }
 
+.content-wrapper--menu-hidden {
+  padding-left: 0;
+}
+
 @media(max-width: 1075px) {
   
   .content-wrapper {

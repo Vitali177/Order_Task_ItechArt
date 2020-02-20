@@ -181,7 +181,9 @@
 @media screen and (max-width: 1075px) {
   
   .order-list {
-    transition: transform .5s ease-in;
-    transform: translateX(-300px);
+    display: none;
+    left: 0;
+    /* transition: transform .5s ease-in;
+    transform: translateX(-300px); */
   }  
 }
