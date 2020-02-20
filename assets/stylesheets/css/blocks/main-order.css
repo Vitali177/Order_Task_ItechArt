@@ -271,7 +271,7 @@
   padding-right: 10px;
 }
 
-.order__line-list-row span.mobile-info {
+.order__line-list-row .mobile-info {
   display: none;
 }
 
