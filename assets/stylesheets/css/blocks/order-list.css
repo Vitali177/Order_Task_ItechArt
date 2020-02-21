@@ -9,6 +9,10 @@
   box-shadow: -5px 0px 10px var(--primary-gray); 
 }
 
+.order-list--hidden {
+  display: block;
+}
+
 .order-list__header {
   height: 55px;
   border-bottom: 1px solid var(--primary-gray);
