@@ -1,4 +1,4 @@
-const Orders = [
+export const Orders = [
 	{
 		id: "1",
 		OrderInfo: {
