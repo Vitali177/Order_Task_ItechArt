@@ -213,7 +213,7 @@
 .order__line-items {
   height: 45%;
   min-height: 250px;
-  padding: 0 20px;
+  padding: 0 20px var(--footer-height) 20px;
   background-color: var(--primary-light-gray);
 
   display: flex;
@@ -320,7 +320,7 @@
 
   .order__line-items {
     min-height: 350px;
-    padding: 0;
+    padding: 0 0 var(--footer-height) 0;
   }
   
   .order__line-items-heading {
