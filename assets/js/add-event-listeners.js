@@ -1,5 +1,6 @@
 import { Orders } from './data';
 import { showDetailsOrder } from './show-details-order';
+import { searchOrders } from './search-orders';
 
 export function addEventListeners() {
   const buttonBack = document.querySelector('.order-list__button-back');
@@ -14,6 +15,8 @@ export function addEventListeners() {
   const sectionOrderProcessor = document.querySelector('section.order__processor');
 
   const orderItems = document.querySelectorAll('.order-list__item');
+
+  const searchFromOrdersList = document.querySelector('.order-list__form input');
 
   buttonBack.addEventListener('click', () => {
     contentWrapper.classList.add('content-wrapper--menu-hidden');
@@ -45,5 +48,9 @@ export function addEventListeners() {
       item.classList.add('order-list__item--selected');
       showDetailsOrder(item, Orders);
     });
+  });
+
+  searchFromOrdersList.addEventListener('input', () => {
+    searchOrders(searchFromOrdersList.value);
   });
 }
