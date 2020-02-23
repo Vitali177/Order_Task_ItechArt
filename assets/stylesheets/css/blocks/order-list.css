@@ -7,6 +7,7 @@
   width: var(--order-list-width);
   background-color: var(--primary-white);
   box-shadow: -5px 0px 10px var(--primary-gray); 
+  transition: all .4s ease-in-out;
 }
 
 .order-list--hidden {
@@ -189,11 +190,10 @@
   
   .order-list {
     left: 0;
-    transition: all .5s ease-in-out;
   }  
 
   .order-list--hidden {
     display: block;
-    transform: translateX(-300px);
+    transform: translateX(-255px);
   }
 }
