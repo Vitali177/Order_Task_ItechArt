@@ -52,7 +52,9 @@ export function addEventListeners() {
       item.classList.add('order-list__item--selected');
       showDetailsOrder(item, Orders); // ! Переписать в делегирование сделать один обработчик для order-list__main
     
-      buttonBack.click(); // hide the menu when the user selects an order
+      if (window.innerWidth < 1075) {
+        buttonBack.click(); // hide the menu when the user selects an order
+      }
     });
   });
 
