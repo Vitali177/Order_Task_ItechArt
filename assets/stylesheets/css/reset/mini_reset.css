@@ -20,7 +20,7 @@ h3 {
   margin: 0 auto;
   padding-left: var(--order-list-width); /* while order-list is open */
   box-shadow: 5px 0px 10px #afadad;  
-  transition: all 0.5s ease;
+  transition: all .5s ease-in-out;
 }
 
 .content-wrapper--menu-hidden {

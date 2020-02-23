@@ -1,6 +1,7 @@
 import { Orders } from './data';
 import { showDetailsOrder } from './show-details-order';
 import { searchOrders } from './search-orders';
+import { sortingProducts } from './sorting-products';
 
 export function addEventListeners() {
   const buttonBack = document.querySelector('.order-list__button-back');
@@ -17,17 +18,20 @@ export function addEventListeners() {
   const orderItems = document.querySelectorAll('.order-list__item');
 
   const searchFromOrdersList = document.querySelector('.order-list__form input');
+  const imagesOfSortingProducts = document.querySelectorAll('.order__line-list-row--headline img')
 
   buttonBack.addEventListener('click', () => {
     contentWrapper.classList.add('content-wrapper--menu-hidden');
     headerButton.style.display = 'block';
-    orderList.style.display = 'none';
+    orderList.classList.add('order-list--hidden');
+    // orderList.style.display = 'none';
   });
 
   headerButton.addEventListener('click', () => {
     contentWrapper.classList.remove('content-wrapper--menu-hidden');
     headerButton.style.display = 'none';
-    orderList.style.display = 'block';
+    orderList.classList.remove('order-list--hidden');
+    // orderList.style.display = 'block';
   });
 
   buttonAddress.addEventListener('click', () => {
@@ -46,11 +50,19 @@ export function addEventListeners() {
       document.querySelector('.order-list__item--selected').classList.remove('order-list__item--selected');
 
       item.classList.add('order-list__item--selected');
-      showDetailsOrder(item, Orders);
+      showDetailsOrder(item, Orders); // ! Переписать в делегирование сделать один обработчик для order-list__main
+    
+      buttonBack.click(); // hide the menu when the user selects an order
     });
   });
 
   searchFromOrdersList.addEventListener('input', () => {
     searchOrders(searchFromOrdersList.value);
+  });
+
+  imagesOfSortingProducts.forEach((image) => {
+    image.addEventListener('click', () => {
+      sortingProducts();
+    });
   });
 }

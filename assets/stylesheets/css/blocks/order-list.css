@@ -10,7 +10,7 @@
 }
 
 .order-list--hidden {
-  display: block;
+  display: none;
 }
 
 .order-list__header {
@@ -188,9 +188,12 @@
 @media screen and (max-width: 1075px) {
   
   .order-list {
-    display: none;
     left: 0;
-    /* transition: transform .5s ease-in;
-    transform: translateX(-300px); */
+    transition: all .5s ease-in-out;
   }  
+
+  .order-list--hidden {
+    display: block;
+    transform: translateX(-300px);
+  }
 }

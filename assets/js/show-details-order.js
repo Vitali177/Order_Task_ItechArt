@@ -2,7 +2,7 @@ export function showDetailsOrder(element, Orders) {
   const sectionMainInfo = document.querySelector('section.order__main-info .wrapper');
   const sectionOrderAddress = document.querySelector('section.order__address');
   const sectionOrderProcessor = document.querySelector('section.order__processor');
-  const sectionOrderLineItems = document.querySelector('.order__line-items');
+  const sectionOrderLineItems = document.querySelector('section.order__line-items .wrapper');
   let order;
 
   Orders.forEach((item) => {
@@ -87,10 +87,12 @@ export function showDetailsOrder(element, Orders) {
   sectionOrderProcessor.innerHTML = markup;
 
 
-  let markupProducts = '';
+  const numberLineItems = document.querySelector('.order__line-items-heading span');
+  numberLineItems.innerHTML = `(${order.products.length})`;
 
+  markup = '';
   order.products.forEach((product) => {
-    markupProducts += `
+    markup += `
     <div class="order__line-list-row">
       <li class="product">${product.name}<br><span>${product.id}</span></li>
       <li class="unit-price"><span class="mobile-info">Unit Price:<br></span>${product.price} ${product.currency}</li>
@@ -99,19 +101,5 @@ export function showDetailsOrder(element, Orders) {
     </div>
     <hr>`;  
   });
-
-  markup = `
-  <h4 class="order__line-items-heading">Line Items <span>(${order.products.length})</span></h4>
-  <hr>
-  <ul class="order__line-list">
-    <div class="order__line-list-row order__line-list-row--headline">
-      <li class="product">Product</li>
-      <li class="unit-price">Unit Price</li>
-      <li class="quantity">Quantity</li>
-      <li class="total">Total</li>
-    </div>
-    <hr>
-    ${markupProducts}
-  </ul> `;
   sectionOrderLineItems.innerHTML = markup;
 }
