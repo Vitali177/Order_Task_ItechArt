@@ -1,9 +1,9 @@
 import { Orders } from './data';
 
-export function sortingProducts() {
+export function sortingProducts(sortingCriterion, sortingDirection) {
   const sectionOrderLineItems = document.querySelector('section.order__line-items .wrapper');
   const idSelectedOrder = document.querySelector('.order-list__item--selected').id;
-  let order;
+  let order, sortedProducts;
 
   Orders.forEach((item) => {
     if (item.id === idSelectedOrder) {
@@ -12,10 +12,24 @@ export function sortingProducts() {
   });
   
   const products = order.products;
-  console.log(products);
 
-  const sortedProducts = products.sort((a, b) => a.price - b.price);
-  console.log(sortedProducts);
+  let sortingKey;
+  if (sortingCriterion === 'product') sortingKey = 'name';
+  else if (sortingCriterion === 'unit-price') sortingKey = 'price';
+  else if (sortingCriterion === 'quantity') sortingKey = 'quantity';
+  else if (sortingCriterion === 'total') sortingKey = 'totalPrice';
+
+  if (sortingDirection === 'from-maximum') {
+    if (sortingKey === 'name') sortedProducts = products.sort((a, b) => {
+      if (b[sortingKey] > a[sortingKey]) return 1;
+      return (b[sortingKey] < a[sortingKey]) ? -1 : 0;
+    }); else sortedProducts = products.sort((a, b) => a[sortingKey] - b[sortingKey]);
+  } else {
+    if (sortingKey === 'name') sortedProducts = products.sort((a, b) => {
+      if (a[sortingKey] > b[sortingKey]) return 1;
+      return (a[sortingKey] < b[sortingKey]) ? -1 : 0;
+    }); else sortedProducts = products.sort((a, b) => b[sortingKey] - a[sortingKey]);
+  }  
   
   let markup = '';
   sortedProducts.forEach((product) => {

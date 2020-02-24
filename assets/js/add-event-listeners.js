@@ -18,20 +18,19 @@ export function addEventListeners() {
   const orderItems = document.querySelectorAll('.order-list__item');
 
   const searchFromOrdersList = document.querySelector('.order-list__form input');
-  const imagesOfSortingProducts = document.querySelectorAll('.order__line-list-row--headline img')
+  const imagesOfSortingProducts = document.querySelectorAll('.order__line-list-row--headline img');
+  let sortingDirection = 'from-minimum';
 
   buttonBack.addEventListener('click', () => {
     contentWrapper.classList.add('content-wrapper--menu-hidden');
     headerButton.style.display = 'block';
     orderList.classList.add('order-list--hidden');
-    // orderList.style.display = 'none';
   });
 
   headerButton.addEventListener('click', () => {
     contentWrapper.classList.remove('content-wrapper--menu-hidden');
     headerButton.style.display = 'none';
     orderList.classList.remove('order-list--hidden');
-    // orderList.style.display = 'block';
   });
 
   buttonAddress.addEventListener('click', () => {
@@ -52,7 +51,7 @@ export function addEventListeners() {
       item.classList.add('order-list__item--selected');
       showDetailsOrder(item, Orders); // ! Переписать в делегирование сделать один обработчик для order-list__main
     
-      if (window.innerWidth < 1075) {
+      if (window.innerWidth < 1075) { // ! magic number
         buttonBack.click(); // hide the menu when the user selects an order
       }
     });
@@ -64,7 +63,8 @@ export function addEventListeners() {
 
   imagesOfSortingProducts.forEach((image) => {
     image.addEventListener('click', () => {
-      sortingProducts();
+      sortingProducts(image.parentNode.classList.value, sortingDirection);
+      sortingDirection = (sortingDirection === 'from-maximum') ? 'from-minimum' : 'from-maximum';
     });
   });
 }
