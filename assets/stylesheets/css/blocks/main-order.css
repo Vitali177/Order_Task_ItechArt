@@ -217,6 +217,17 @@
   font-weight: 500;
 }
 
+.order__line-items-form {
+  margin-bottom: 15px;
+  position: relative;
+  width: 275px;
+}
+
+.order__line-items-form .input-search {
+  width: 275px;
+  padding: 0 60px 0 10px;
+}
+
 .order__line-list {
   display: flex;
   flex-direction: column;
