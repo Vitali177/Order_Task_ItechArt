@@ -6,7 +6,16 @@ export function searchOrders(searchText) {
 
   let matchesOrders = orders.filter(order => {
     const regex = new RegExp(`^${searchText}`, 'gi');
-    return order.id.match(regex) || order.ShipTo.name.match(regex);
+
+    for (let key in order) {
+      if (key === 'id' || key === 'OrderInfo' || key === 'ShipTo' || key === 'CustomerInfo') {
+        let mainProperties = order[key];
+        for (let key in mainProperties) {
+          if (mainProperties[key].match(regex)) return 1;
+        }    
+      }        
+    }
+    return 0;
   });
 
   if (searchText.length === 0) {

@@ -349,6 +349,10 @@
     min-height: 350px;
     padding: 0 0 var(--footer-height) 0;
   }
+
+  .order__line-items-form {
+    padding-left: 20px;
+  }
   
   .order__line-items-heading {
     padding-left: 20px;
