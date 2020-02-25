@@ -14,7 +14,7 @@ export function searchProducts(searchText) {
 
   let matchesProducts = products.filter(product => {
     const regex = new RegExp(`^${searchText}`, 'gi');
-    return product.name.match(regex) || product.price.match(regex) 
+    return product.id.match(regex) || product.name.match(regex) || product.price.match(regex) 
       || product.quantity.match(regex) || product.totalPrice.match(regex);
   });
 

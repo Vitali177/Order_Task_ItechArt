@@ -223,7 +223,7 @@
   width: 275px;
 }
 
-.order__line-items-form .input-search {
+.order__line-items-input-search {
   width: 275px;
   padding: 0 60px 0 10px;
 }
@@ -400,4 +400,8 @@
   .order__line-list-row--headline .total {
     display: none;
   }  
+
+  .no-products {
+    padding-left: 20px;
+  }
 } 

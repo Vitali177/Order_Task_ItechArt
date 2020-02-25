@@ -20,8 +20,11 @@ export function addEventListeners() {
   const sectionOrderAddress = document.querySelector('section.order__address');
   const sectionOrderProcessor = document.querySelector('section.order__processor');
 
-  const searchFromOrdersList = document.querySelector('.order-list__form input');
-  const searchFromProductsTable = document.querySelector('.order__line-items-form input');
+  const searchFromOrdersList = document.querySelector('.order-list__input-search');
+  const imageSearchFromOrdersList = document.querySelector('.order-list__form .order-list__button-search');
+  const searchFromProductsTable = document.querySelector('.order__line-items-input-search');
+  const imageSearchFromProductsTable = document.querySelector('.order__line-items-form .order-list__button-search');
+
   const imagesOfSortingProducts = document.querySelectorAll('.order__line-list-row--headline img');
 
   buttonBack.addEventListener('click', () => {
@@ -67,11 +70,13 @@ export function addEventListeners() {
     }
   });
 
-  searchFromOrdersList.addEventListener('input', () => {
+  imageSearchFromOrdersList.addEventListener('click', (e) => {
+    e.preventDefault();
     searchOrders(searchFromOrdersList.value);
   });
 
-  searchFromProductsTable.addEventListener('input', () => {
+  imageSearchFromProductsTable.addEventListener('click', (e) => {
+    e.preventDefault();
     searchProducts(searchFromProductsTable.value);
   });
 
