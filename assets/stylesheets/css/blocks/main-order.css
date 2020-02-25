@@ -308,6 +308,10 @@
   cursor: pointer;
 }
 
+.no-products {
+  padding-top: 10px;
+}
+
 /* @media */
 
 @media(max-width: 580px) {

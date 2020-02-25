@@ -1,6 +1,7 @@
 import { Orders } from './data';
 import { showDetailsOrder } from './show-details-order';
 import { searchOrders } from './search-orders';
+import { searchProducts } from './search-products';
 import { sortingProducts } from './sorting-products';
 
 export function addEventListeners() {
@@ -20,6 +21,7 @@ export function addEventListeners() {
   const sectionOrderProcessor = document.querySelector('section.order__processor');
 
   const searchFromOrdersList = document.querySelector('.order-list__form input');
+  const searchFromProductsTable = document.querySelector('.order__line-items-form input');
   const imagesOfSortingProducts = document.querySelectorAll('.order__line-list-row--headline img');
 
   buttonBack.addEventListener('click', () => {
@@ -67,6 +69,10 @@ export function addEventListeners() {
 
   searchFromOrdersList.addEventListener('input', () => {
     searchOrders(searchFromOrdersList.value);
+  });
+
+  searchFromProductsTable.addEventListener('input', () => {
+    searchProducts(searchFromProductsTable.value);
   });
 
   imagesOfSortingProducts.forEach((image) => {

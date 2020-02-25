@@ -1,5 +1,4 @@
 import { Orders } from './data';
-import { getMarkupAllOrdersInList } from './get-markup-all-orders-in-list';
 
 export function searchOrders(searchText) {
   const orderListMain = document.querySelector('.order-list__main');
@@ -11,9 +10,7 @@ export function searchOrders(searchText) {
   });
 
   if (searchText.length === 0) {
-    matchesOrders = [];
-    orderListMain.innerHTML = getMarkupAllOrdersInList(Orders); // show all list when input is empty
-    return;
+    matchesOrders = orders; // show all list when input is empty
   }
 
   if (matchesOrders.length > 0) {
@@ -36,6 +33,6 @@ export function searchOrders(searchText) {
 
     orderListMain.innerHTML = markup;
   } else {
-    orderListMain.innerHTML = '<h3>Orders not found</h3>';
+    orderListMain.innerHTML = '<div class="no-orders">Orders not found</div>';
   }
 }
