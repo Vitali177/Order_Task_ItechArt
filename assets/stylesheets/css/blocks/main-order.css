@@ -238,6 +238,7 @@
   font-size: 14px;
   list-style-type: none;
   background-color: var(--primary-white);
+  border-bottom: 1px solid var(--primary-gray);
 }
 
 .order__line-list-row .product, 
@@ -258,7 +259,7 @@
   align-items: flex-start;
 }
 
-.order__line-list-row .product span {
+.order__line-list-row .product .id {
   font-weight: 300;
 }
 
@@ -275,6 +276,10 @@
 
 .order__line-list-row .mobile-info {
   display: none;
+}
+
+.order__line-list-row .currency {
+  margin-left: 5px;
 }
 
 /* line-list block */
