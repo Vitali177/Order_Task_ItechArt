@@ -10,13 +10,10 @@ export function showDetailsOrder(element, Orders) {
       order = item;
     }
   });
-  console.log(order);
-
 
   let totalCost = 0;
   order.products.forEach((product) => totalCost += (product.quantity * product.price));
   totalCost = totalCost.toFixed(2);
-
 
   let markup =`
   <div class="order__row">
@@ -85,7 +82,6 @@ export function showDetailsOrder(element, Orders) {
     </ul>
   </div>`;
   sectionOrderProcessor.innerHTML = markup;
-
 
   const numberLineItems = document.querySelector('.order__line-items-heading span');
   numberLineItems.innerHTML = `(${order.products.length})`;
