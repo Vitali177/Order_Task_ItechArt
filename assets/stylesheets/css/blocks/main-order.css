@@ -303,14 +303,24 @@
   margin-right: -5px;
 }
 
-.order__line-list-row--headline .product img, 
-.order__line-list-row--headline .unit-price img, 
-.order__line-list-row--headline .quantity img, 
-.order__line-list-row--headline .total img {
+.sort-picture {
   margin-left: 5px;
   height: 20px;
   width: 20px;
   cursor: pointer;
+  background: url("../../../img/sorting.png") center center no-repeat;
+  background-size: 100%;
+}
+
+.sort-picture--ASC {
+  background: url("../../../img/down-arrow.png") center center no-repeat;
+  background-size: 100%;
+}
+
+.sort-picture--DESC {
+  background: url("../../../img/down-arrow.png") center center no-repeat;
+  background-size: 100%;
+  transform: rotate(180deg);
 }
 
 .no-products {
@@ -361,6 +371,18 @@
   
   .order__line-items-heading {
     padding-left: 20px;
+  }
+
+  .order__line-items-input-search {
+    width: 260px;
+  }
+
+  .order-list__button-search {
+    right: 25px;
+  }
+
+  .order-list__button-refresh {
+    right: 0;
   }
 
   .order__line-list-row {

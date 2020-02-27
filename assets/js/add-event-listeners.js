@@ -3,9 +3,9 @@ import { showDetailsOrder } from './show-details-order';
 import { searchOrders } from './search-orders';
 import { searchProducts } from './search-products';
 import { sortingProducts } from './sorting-products';
+import { clearSettingsToDefault } from './clear-settings-to-default';
 
 export function addEventListeners() {
-  let sortingDirection = 'from-minimum';
   const tabletWidth = 1075;
 
   const buttonBack = document.querySelector('.order-list__button-back');
@@ -25,7 +25,7 @@ export function addEventListeners() {
   const searchFromProductsTable = document.querySelector('.order__line-items-input-search');
   const imageSearchFromProductsTable = document.querySelector('.order__line-items-form .order-list__button-search');
 
-  const imagesOfSortingProducts = document.querySelectorAll('.order__line-list-row--headline img');
+  const imagesOfSortingProducts = document.querySelectorAll('.order__line-list-row--headline .sort-picture');
 
   buttonBack.addEventListener('click', () => {
     contentWrapper.classList.add('content-wrapper--menu-hidden');
@@ -64,6 +64,8 @@ export function addEventListeners() {
       orderListItem.classList.add('order-list__item--selected');
       showDetailsOrder(orderListItem, Orders);
 
+      clearSettingsToDefault();
+
       if (window.innerWidth < tabletWidth) {
         buttonBack.click(); // hide the menu when the user selects an order
       }
@@ -81,9 +83,8 @@ export function addEventListeners() {
   });
 
   imagesOfSortingProducts.forEach((image) => {
-    image.addEventListener('click', () => {
-      sortingProducts(image.parentNode.classList.value, sortingDirection);
-      sortingDirection = (sortingDirection === 'from-maximum') ? 'from-minimum' : 'from-maximum';
+    image.addEventListener('click', (e) => {
+      sortingProducts(image.parentNode.classList.value, e);
     });
   });
 }

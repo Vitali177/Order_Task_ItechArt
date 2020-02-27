@@ -1,6 +1,7 @@
 import { Orders } from './data';
 
 export function searchProducts(searchText) {
+  const numberLineItems = document.querySelector('.order__line-items-heading span');
   const orderLineList = document.querySelector('.order__line-list .wrapper');
   const id = document.querySelector('h3.order__name span').innerHTML;
   let order;
@@ -51,4 +52,5 @@ export function searchProducts(searchText) {
   } else {
     orderLineList.innerHTML = '<div class="no-products">Products not found</div>';
   }
+  numberLineItems.innerHTML = `(${matchesProducts.length})`;
 } 
