@@ -3,11 +3,8 @@ import { searchProducts } from './search-products';
 export function sortingProducts(sortingCriterion, e) {
   const sectionOrderLineItems = document.querySelector('section.order__line-items .wrapper');
   const products = [...document.querySelectorAll('.wrapper .order__line-list-row')];  
-
   const image = e.target;
   let sortingDirection = null;
-  console.log(image);
-
 
   if (image.classList.contains('sort-picture--ASC')) {
     image.classList.remove('sort-picture--ASC');
