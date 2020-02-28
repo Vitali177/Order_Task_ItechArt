@@ -1,10 +1,10 @@
-import { Orders } from './data';
-import { getMarkupOrderProduct } from './html-markups/get-markup-order-product';
+import { Orders } from "./data";
+import { getMarkupOrderProduct } from "./html-markups/get-markup-order-product";
 
 export function searchProducts(searchText) {
-  const numberLineItems = document.querySelector('.order__line-items-heading span');
-  const orderLineList = document.querySelector('.order__line-list .wrapper');
-  const id = document.querySelector('h3.order__name span').innerHTML;
+  const numberLineItems = document.querySelector(".order__line-items-heading span");
+  const orderLineList = document.querySelector(".order__line-list .wrapper");
+  const id = document.querySelector("h3.order__name span").innerHTML;
   let order;
 
   Orders.forEach((item) => {
@@ -15,7 +15,7 @@ export function searchProducts(searchText) {
   const products = [...order.products];
 
   let matchesProducts = products.filter(product => {
-    const regex = new RegExp(`^${searchText}`, 'gi');
+    const regex = new RegExp(`^${searchText}`, "gi");
     return product.id.match(regex) || product.name.match(regex) || product.price.match(regex) 
       || product.quantity.match(regex) || product.totalPrice.match(regex);
   });
@@ -25,10 +25,10 @@ export function searchProducts(searchText) {
   }
 
   if (matchesProducts.length > 0) {
-    const markup = matchesProducts.map(product => getMarkupOrderProduct(product)).join('');
+    const markup = matchesProducts.map(product => getMarkupOrderProduct(product)).join("");
     orderLineList.innerHTML = markup;
   } else {
-    orderLineList.innerHTML = '<div class="no-products">Products not found</div>';
+    orderLineList.innerHTML = "<div class="no-products">Products not found</div>";
   }
   numberLineItems.innerHTML = `(${matchesProducts.length})`;
 } 
