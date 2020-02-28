@@ -20,11 +20,11 @@ export function searchProducts(searchText) {
       || product.quantity.match(regex) || product.totalPrice.match(regex);
   });
 
-  if (searchText.length === 0) {
+  if (!searchText.length) {
     matchesProducts = products; // show all list when input is empty
   }
 
-  if (matchesProducts.length > 0) {
+  if (matchesProducts.length) {
     const markup = matchesProducts.map(product => getMarkupOrderProduct(product)).join("");
     orderLineList.innerHTML = markup;
   } else {

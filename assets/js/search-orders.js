@@ -1,30 +1,28 @@
-import { Orders } from "./data";
 import { getMarkupOrderInList } from "./html-markups/get-markup-order-in-list";
 
-export function searchOrders(searchText) {
+export function searchOrders(searchText, Orders) {
   const numberOfOrders = document.querySelector(".order-list__header-row h3 span");
   const orderListMain = document.querySelector(".order-list__main");
-  const orders = [...Orders];
+  const orderMainCriterias = ["id", "OrderInfo", "ShipTo", "CustomerInfo"];
 
-  let matchesOrders = orders.filter(order => {
+  let matchesOrders = Orders.filter(order => {
     const regex = new RegExp(`^${searchText}`, "gi");
 
-    for (let key in order) {
-      if (key === "id" || key === "OrderInfo" || key === "ShipTo" || key === "CustomerInfo") {
-        let mainProperties = order[key];
+    for (let keyMain in order) {
+      if (orderMainCriterias.indexOf(keyMain) !== -1) {
+        let mainProperties = order[keyMain];
         for (let key in mainProperties) {
           if (mainProperties[key].match(regex)) return 1;
         }    
       }        
     }
-    return 0;
   });
 
-  if (searchText.length === 0) {
-    matchesOrders = orders; // show all list when input is empty
+  if (!searchText.length) {
+    matchesOrders = Orders; // show all list when input is empty
   }
 
-  if (matchesOrders.length > 0) {
+  if (matchesOrders.length) {
     const markup = matchesOrders.map(order => getMarkupOrderInList(order)).join("");
     orderListMain.innerHTML = markup;
   } else {

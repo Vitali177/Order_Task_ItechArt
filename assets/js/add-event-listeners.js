@@ -74,7 +74,7 @@ export function addEventListeners() {
 
   imageSearchFromOrdersList.addEventListener("click", (e) => {
     e.preventDefault();
-    searchOrders(searchFromOrdersList.value);
+    searchOrders(searchFromOrdersList.value, Orders);
   });
 
   imageSearchFromProductsTable.addEventListener("click", (e) => {
