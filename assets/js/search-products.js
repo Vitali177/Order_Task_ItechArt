@@ -28,7 +28,7 @@ export function searchProducts(searchText) {
     const markup = matchesProducts.map(product => getMarkupOrderProduct(product)).join("");
     orderLineList.innerHTML = markup;
   } else {
-    orderLineList.innerHTML = "<div class="no-products">Products not found</div>";
+    orderLineList.innerHTML = `<div class="no-products">Products not found</div>`;
   }
   numberLineItems.innerHTML = `(${matchesProducts.length})`;
 } 

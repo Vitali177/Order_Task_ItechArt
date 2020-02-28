@@ -6,6 +6,16 @@ export function sortingProducts(sortingCriterion, e) {
   const image = e.target;
   let sortingDirection = null;
 
+  const lastSortingImages = [...document.querySelectorAll(".sort-picture--DESC"),
+    ...document.querySelectorAll(".sort-picture--ASC")];
+
+  lastSortingImages.forEach(lastImage => {  // show default state of other "active" images
+    if (image !== lastImage) {
+      lastImage.classList.remove("sort-picture--DESC");
+      lastImage.classList.remove("sort-picture--ASC");
+    }
+  });
+
   if (image.classList.contains("sort-picture--ASC")) {
     image.classList.remove("sort-picture--ASC");
     image.classList.add("sort-picture--DESC");

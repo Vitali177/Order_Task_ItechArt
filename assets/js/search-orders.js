@@ -28,7 +28,7 @@ export function searchOrders(searchText) {
     const markup = matchesOrders.map(order => getMarkupOrderInList(order)).join("");
     orderListMain.innerHTML = markup;
   } else {
-    orderListMain.innerHTML = "<div class="no-orders">Orders not found</div>";
+    orderListMain.innerHTML = `<div class="no-orders">Orders not found</div>`;
   }
   numberOfOrders.innerHTML = `(${matchesOrders.length})`;
 }
