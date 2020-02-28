@@ -84,7 +84,7 @@ export function addEventListeners() {
 
   imagesOfSortingProducts.forEach((image) => {
     image.addEventListener("click", (e) => {
-      sortingProducts(image.parentNode.classList.value, e);
+      sortingProducts(e, image.parentNode.classList.value, Orders);
     });
   });
 }

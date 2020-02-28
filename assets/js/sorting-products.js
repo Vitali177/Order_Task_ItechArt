@@ -1,6 +1,6 @@
 import { searchProducts } from "./search-products";
 
-export function sortingProducts(sortingCriterion, e) {
+export function sortingProducts(e, sortingCriterion, Orders) {
   const sectionOrderLineItems = document.querySelector("section.order__line-items .wrapper");
   const products = [...document.querySelectorAll(".wrapper .order__line-list-row")];  
   const image = e.target;
@@ -13,14 +13,12 @@ export function sortingProducts(sortingCriterion, e) {
   const lastSortingImages = [...document.querySelectorAll(".sort-picture--DESC"),
     ...document.querySelectorAll(".sort-picture--ASC")];
 
-  if (lastSortingImages.length) {
-    lastSortingImages.forEach(lastImage => {  // show default state of other "active" images
-      if (image !== lastImage) {
-        lastImage.classList.remove("sort-picture--DESC");
-        lastImage.classList.remove("sort-picture--ASC");
-      }
-    });
-  }  
+  lastSortingImages.forEach(lastImage => {  // show default state of other "active" images
+    if (image !== lastImage) {
+      lastImage.classList.remove("sort-picture--DESC");
+      lastImage.classList.remove("sort-picture--ASC");
+    }
+  });
 
   if (image.classList.contains("sort-picture--ASC")) {
     image.classList.remove("sort-picture--ASC");
@@ -35,7 +33,7 @@ export function sortingProducts(sortingCriterion, e) {
   }
 
   if (sortingDirection === defaultDirection) {    
-    searchProducts(document.querySelector(".order__line-items-input-search").value); // display columns by default
+    searchProducts(document.querySelector(".order__line-items-input-search").value, Orders); // display columns by default
     return;
   }
 
