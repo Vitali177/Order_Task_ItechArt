@@ -79,7 +79,7 @@ export function addEventListeners() {
 
   imageSearchFromProductsTable.addEventListener("click", (e) => {
     e.preventDefault();
-    searchProducts(searchFromProductsTable.value);
+    searchProducts(searchFromProductsTable.value, Orders);
   });
 
   imagesOfSortingProducts.forEach((image) => {

@@ -3,13 +3,13 @@ import { getMarkupOrderInList } from "./html-markups/get-markup-order-in-list";
 export function searchOrders(searchText, Orders) {
   const numberOfOrders = document.querySelector(".order-list__header-row h3 span");
   const orderListMain = document.querySelector(".order-list__main");
-  const orderMainCriterias = ["id", "OrderInfo", "ShipTo", "CustomerInfo"];
+  const orderMainCriteria = ["id", "OrderInfo", "ShipTo", "CustomerInfo"];
 
   let matchesOrders = Orders.filter(order => {
     const regex = new RegExp(`^${searchText}`, "gi");
 
     for (let keyMain in order) {
-      if (orderMainCriterias.indexOf(keyMain) !== -1) {
+      if (orderMainCriteria.indexOf(keyMain) !== -1) {
         let mainProperties = order[keyMain];
         for (let key in mainProperties) {
           if (mainProperties[key].match(regex)) return 1;

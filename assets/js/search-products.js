@@ -1,7 +1,6 @@
-import { Orders } from "./data";
 import { getMarkupOrderProduct } from "./html-markups/get-markup-order-product";
 
-export function searchProducts(searchText) {
+export function searchProducts(searchText, Orders) {
   const numberLineItems = document.querySelector(".order__line-items-heading span");
   const orderLineList = document.querySelector(".order__line-list .wrapper");
   const id = document.querySelector("h3.order__name span").innerHTML;
