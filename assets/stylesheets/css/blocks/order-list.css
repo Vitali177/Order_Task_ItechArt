@@ -37,7 +37,7 @@
 
 .order-list__button-search {
   right: 35px;
-  background: url('../../../img/search.png') center center no-repeat no-repeat;
+  background: url("../../../img/search.png") center center no-repeat no-repeat;
   background-size: 75%;
 }
 
@@ -51,7 +51,7 @@
 
 .order-list__button-refresh {
   right: 10px;
-  background: url('../../../img/refresh.png') center center no-repeat no-repeat;
+  background: url("../../../img/refresh.png") center center no-repeat no-repeat;
   background-size: 75%;
 }
 
@@ -82,7 +82,7 @@
   width: 20px;
   height: 25px;
   border: 0;
-  background: url('../../../img/left-arrow.png') center center no-repeat no-repeat;
+  background: url("../../../img/left-arrow.png") center center no-repeat no-repeat;
   background-size: 75%;
   cursor: pointer;
 }
@@ -177,7 +177,7 @@
 .order-list__footer-button-filter {
   width: 30px;
   height: 30px;
-  background: url('../../../img/filter.png') center center no-repeat no-repeat;
+  background: url("../../../img/filter.png") center center no-repeat no-repeat;
   background-size: 50%;
   cursor: pointer;
 }
