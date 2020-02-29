@@ -4,6 +4,7 @@ import { searchOrders } from "./search-orders";
 import { searchProducts } from "./search-products";
 import { sortingProducts } from "./sorting-products";
 import { clearSettingsToDefault } from "./clear-settings-to-default";
+import { getMarkupAllOrdersInList } from "./get-markup-all-orders-in-list";
 
 export function addEventListeners() {
   const tabletWidth = 1075;
@@ -40,13 +41,19 @@ export function addEventListeners() {
   });
 
   buttonAddress.addEventListener("click", () => {
-    buttonAddress.classList.toggle("order__button-address--selected");
-    sectionOrderAddress.classList.toggle("order__address--hidden");
+    document.querySelector(".order__button--selected").classList.remove("order__button--selected");
+    buttonAddress.classList.toggle("order__button--selected");
+
+    document.querySelector(".tab--selected").classList.remove("tab--selected");
+    sectionOrderAddress.classList.add("tab--selected");
   });
 
   buttonProcessor.addEventListener("click", () => {
-    buttonProcessor.classList.toggle("order__button-processor--selected");
-    sectionOrderProcessor.classList.toggle("order__processor--hidden");
+    document.querySelector(".order__button--selected").classList.remove("order__button--selected");
+    buttonProcessor.classList.toggle("order__button--selected");
+
+    document.querySelector(".tab--selected").classList.remove("tab--selected");
+    sectionOrderProcessor.classList.add("tab--selected");
   });
 
   orderItemsMain.addEventListener("click", (e) => {
@@ -57,13 +64,10 @@ export function addEventListeners() {
         orderListItem = orderListItem.parentNode;
       }
 
-      if (document.querySelector(".order-list__item--selected")) {
-        document.querySelector(".order-list__item--selected").classList.remove("order-list__item--selected");
-      }
-
-      orderListItem.classList.add("order-list__item--selected");
+      orderItemsMain.innerHTML = getMarkupAllOrdersInList(Orders); // show all orders in menu
+      document.getElementById(orderListItem.id).classList.add("order-list__item--selected");
+      
       showDetailsOrder(orderListItem, Orders);
-
       clearSettingsToDefault();
 
       if (window.innerWidth < tabletWidth) {
