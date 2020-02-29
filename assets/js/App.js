@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 function init() {
   const tabletWidth = 1075;
-  const indexSelectedOrder = 1;
+  const indexSelectedOrder = 1;  // default selected order
 
   if (window.innerWidth < tabletWidth) { // removing menu animation (leaving to left), when user just opened the page
     const menu = document.querySelector(".order-list");
@@ -19,7 +19,7 @@ function init() {
   const orderListMain = document.querySelector(".order-list__main");  
   orderListMain.innerHTML = getMarkupAllOrdersInList(Orders);
 
-  document.querySelectorAll(".order-list__item")[indexSelectedOrder].classList.add("order-list__item--selected");  // default selected order
+  document.querySelectorAll(".order-list__item")[indexSelectedOrder].classList.add("order-list__item--selected");
   showDetailsOrder(document.querySelector(".order-list__item--selected"), Orders);
 
   addEventListeners();  

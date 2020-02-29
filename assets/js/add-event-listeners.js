@@ -65,7 +65,7 @@ export function addEventListeners() {
       }
 
       orderItemsMain.innerHTML = getMarkupAllOrdersInList(Orders); // show all orders in menu
-      document.getElementById(orderListItem.id).classList.add("order-list__item--selected");
+      document.querySelector(`div[id="${orderListItem.id}"]`).classList.add("order-list__item--selected");
       
       showDetailsOrder(orderListItem, Orders);
       clearSettingsToDefault();
