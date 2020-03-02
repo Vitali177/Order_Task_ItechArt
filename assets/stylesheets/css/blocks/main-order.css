@@ -199,13 +199,18 @@
   justify-content: flex-start;
 }
 
+.order__line-items-header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .order__line-items-heading {
-  margin: 25px 0 15px 0;
   font-weight: 500;
 }
 
 .order__line-items-form {
-  margin-bottom: 15px;
   position: relative;
   width: 275px;
 }
@@ -354,6 +359,14 @@
 
   .order__line-items-form {
     padding-left: 20px;
+  }
+
+  .order__line-items-header {
+    padding: 0;
+    height: 80px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
   }
   
   .order__line-items-heading {
