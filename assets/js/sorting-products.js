@@ -1,14 +1,14 @@
 import { searchProducts } from "./search-products";
 
-export function sortingProducts(e, sortingCriterion, Orders) {
+export function sortingProducts(image, Orders) {
   const sectionOrderLineItems = document.querySelector("section.order__line-items .wrapper");
   const products = [...document.querySelectorAll(".wrapper .order__line-list-row")];  
-  const image = e.target;
   const alphabetSortCriterion = "product";
   const defaultDirection = "default";
   const directionASC = "ASC";
   const directionDESC = "DESC";
   let sortingDirection = null;
+  const sortingCriterion = image.parentNode.classList.value;
 
   const lastSortingImages = [...document.querySelectorAll(".sort-picture--DESC"),
     ...document.querySelectorAll(".sort-picture--ASC")];

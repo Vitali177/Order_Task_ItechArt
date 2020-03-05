@@ -26,7 +26,7 @@ export function addEventListeners() {
   const searchFromProductsTable = document.querySelector(".order__line-items-input-search");
   const imageSearchFromProductsTable = document.querySelector(".order__line-items-form .order-list__button-search");
 
-  const imagesOfSortingProducts = document.querySelectorAll(".order__line-list-row--headline .sort-picture");
+  const listOfProductsHeader = document.querySelector(".order__line-list-row--headline");
 
   buttonBack.addEventListener("click", () => {
     contentWrapper.classList.add("content-wrapper--menu-hidden");
@@ -84,9 +84,9 @@ export function addEventListeners() {
     searchProducts(searchFromProductsTable.value, Orders);
   }); 
 
-  imagesOfSortingProducts.forEach((image) => {
-    image.addEventListener("click", (e) => {
-      sortingProducts(e, image.parentNode.classList.value, Orders);
-    });
+  listOfProductsHeader.addEventListener("click", (e) => { //  event delegation  
+    if (e.target.classList.contains("sort-picture")) {
+      sortingProducts(e.target, Orders);
+    }
   });
 }
