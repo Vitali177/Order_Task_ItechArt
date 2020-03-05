@@ -4,7 +4,7 @@ import { searchOrders } from "./search-orders";
 import { searchProducts } from "./search-products";
 import { sortingProducts } from "./sorting-products";
 import { clearSettingsToDefault } from "./clear-settings-to-default";
-import { getMarkupAllOrdersInList } from "./get-markup-all-orders-in-list";
+import { createMarkupAllOrdersInList } from "./create-markup-all-orders-in-list";
 
 export function addEventListeners() {
   const tabletWidth = 1075;
@@ -15,9 +15,9 @@ export function addEventListeners() {
   const contentWrapper = document.querySelector(".content-wrapper");
   const orderList = document.querySelector(".order-list");
   const orderItemsMain = document.querySelector(".order-list__main");  
+  
+  const orderButtons = document.querySelector(".order__buttons");
 
-  const buttonAddress = document.querySelector(".order__button-address");
-  const buttonProcessor = document.querySelector(".order__button-processor");
   const sectionOrderAddress = document.querySelector("section.order__address");
   const sectionOrderProcessor = document.querySelector("section.order__processor");
 
@@ -30,30 +30,16 @@ export function addEventListeners() {
 
   buttonBack.addEventListener("click", () => {
     contentWrapper.classList.add("content-wrapper--menu-hidden");
-    headerButton.style.display = "block";
+    headerButton.classList.remove("header__button--hidden");
+    // headerButton.style.display = "block";
     orderList.classList.add("order-list--hidden");
   });
 
   headerButton.addEventListener("click", () => {
     contentWrapper.classList.remove("content-wrapper--menu-hidden");
-    headerButton.style.display = "none";
+    headerButton.classList.add("header__button--hidden");
+    // headerButton.style.display = "none";
     orderList.classList.remove("order-list--hidden");
-  });
-
-  buttonAddress.addEventListener("click", () => {
-    document.querySelector(".order__button--selected").classList.remove("order__button--selected");
-    buttonAddress.classList.toggle("order__button--selected");
-
-    document.querySelector(".tab--selected").classList.remove("tab--selected");
-    sectionOrderAddress.classList.add("tab--selected");
-  });
-
-  buttonProcessor.addEventListener("click", () => {
-    document.querySelector(".order__button--selected").classList.remove("order__button--selected");
-    buttonProcessor.classList.toggle("order__button--selected");
-
-    document.querySelector(".tab--selected").classList.remove("tab--selected");
-    sectionOrderProcessor.classList.add("tab--selected");
   });
 
   orderItemsMain.addEventListener("click", (e) => {
@@ -64,7 +50,7 @@ export function addEventListeners() {
         orderListItem = orderListItem.parentNode;
       }
 
-      orderItemsMain.innerHTML = getMarkupAllOrdersInList(Orders); // show all orders in menu
+      createMarkupAllOrdersInList(Orders); // show all orders in menu
       document.querySelector(`div[id="${orderListItem.id}"]`).classList.add("order-list__item--selected");
       
       showDetailsOrder(orderListItem, Orders);
@@ -72,6 +58,20 @@ export function addEventListeners() {
 
       if (window.innerWidth < tabletWidth) {
         buttonBack.click(); // hide the menu when the user selects an order
+      }
+    }
+  });
+
+  orderButtons.addEventListener("click", (e) => { //  event delegation    
+    if (e.target.classList.contains("order__button")) {
+      document.querySelector(".order__button--selected").classList.remove("order__button--selected");
+      e.target.classList.toggle("order__button--selected");
+
+      document.querySelector(".tab--selected").classList.remove("tab--selected");
+      if (e.target.classList.contains("order__button-address")) {
+        sectionOrderAddress.classList.add("tab--selected");
+      } else if (e.target.classList.contains("order__button-processor")) {
+        sectionOrderProcessor.classList.add("tab--selected");
       }
     }
   });
@@ -84,7 +84,7 @@ export function addEventListeners() {
   imageSearchFromProductsTable.addEventListener("click", (e) => {
     e.preventDefault();
     searchProducts(searchFromProductsTable.value, Orders);
-  });
+  }); 
 
   imagesOfSortingProducts.forEach((image) => {
     image.addEventListener("click", (e) => {

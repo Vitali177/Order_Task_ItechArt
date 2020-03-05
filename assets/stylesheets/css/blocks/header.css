@@ -27,7 +27,6 @@
 
 .header__button {
   position: absolute;
-  display: none;
   width: 30px;
   height: 30px;
   left: 2px;
@@ -37,6 +36,10 @@
   color: var(--primary-blue);
   cursor: pointer;  
 } 
+
+.header .header__button--hidden {
+  display: none;
+}
 
 .header__button::after {
   position: absolute; 
