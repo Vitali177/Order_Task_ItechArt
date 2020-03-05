@@ -2,7 +2,7 @@ import { Orders } from "./data";
 import { createMarkupAllOrdersInList } from "./create-markup-all-orders-in-list";
 import { showDetailsOrder } from "./show-details-order";
 import { addEventListeners } from "./add-event-listeners";
-import { setupApplicationUI } from "./setupApplicationUI";
+import { setupApplicationUI } from "./setup-application-UI";
 
 window.addEventListener("DOMContentLoaded", init);
 
