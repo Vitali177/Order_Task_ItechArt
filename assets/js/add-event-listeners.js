@@ -31,14 +31,12 @@ export function addEventListeners() {
   buttonBack.addEventListener("click", () => {
     contentWrapper.classList.add("content-wrapper--menu-hidden");
     headerButton.classList.remove("header__button--hidden");
-    // headerButton.style.display = "block";
     orderList.classList.add("order-list--hidden");
   });
 
   headerButton.addEventListener("click", () => {
     contentWrapper.classList.remove("content-wrapper--menu-hidden");
     headerButton.classList.add("header__button--hidden");
-    // headerButton.style.display = "none";
     orderList.classList.remove("order-list--hidden");
   });
 
