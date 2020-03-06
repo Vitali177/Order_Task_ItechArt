@@ -1,8 +1,8 @@
-import { Orders } from "./data";
-import { createMarkupAllOrdersInList } from "./create-markup-all-orders-in-list";
-import { showDetailsOrder } from "./show-details-order";
-import { addEventListeners } from "./add-event-listeners";
-import { setupApplicationUI } from "./setup-application-UI";
+import { Orders } from "./data/data";
+import { createMarkupAllOrdersInList } from "./modules/create-markup-all-orders-in-list";
+import { showDetailsOrder } from "./modules/show-details-order";
+import { addEventListeners } from "./modules/add-event-listeners";
+import { setupApplicationUI } from "./modules/setup-application-UI";
 
 window.addEventListener("DOMContentLoaded", init);
 

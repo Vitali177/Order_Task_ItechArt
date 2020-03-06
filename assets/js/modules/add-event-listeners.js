@@ -1,4 +1,4 @@
-import { Orders } from "./data";
+import { Orders } from "../data/data";
 import { showDetailsOrder } from "./show-details-order";
 import { searchOrders } from "./search-orders";
 import { searchProducts } from "./search-products";

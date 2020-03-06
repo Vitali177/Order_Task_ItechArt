@@ -1,4 +1,4 @@
-import { getMarkupOrderProduct } from "./html-markups/get-markup-order-product";
+import { getMarkupOrderProduct } from "../html-markups/get-markup-order-product";
 
 export function searchProducts(searchText, Orders) {
   const numberLineItems = document.querySelector(".order__line-items-heading span");

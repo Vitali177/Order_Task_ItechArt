@@ -1,4 +1,4 @@
-import { getMarkupOrderInList } from "./html-markups/get-markup-order-in-list";
+import { getMarkupOrderInList } from "../html-markups/get-markup-order-in-list";
 
 export function createMarkupAllOrdersInList(Orders) {
   const orderListMain = document.querySelector(".order-list__main");  

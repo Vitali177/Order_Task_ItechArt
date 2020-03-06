@@ -1,7 +1,7 @@
-import { getMarkupOrderMainInfo } from "./html-markups/get-markup-order-main-info";
-import { getMarkupOrderAddress } from "./html-markups/get-markup-order-address";
-import { getMarkupOrderCustomer } from "./html-markups/get-markup-order-customer"; 
-import { getMarkupOrderProduct } from "./html-markups/get-markup-order-product";
+import { getMarkupOrderMainInfo } from "../html-markups/get-markup-order-main-info";
+import { getMarkupOrderAddress } from "../html-markups/get-markup-order-address";
+import { getMarkupOrderCustomer } from "../html-markups/get-markup-order-customer"; 
+import { getMarkupOrderProduct } from "../html-markups/get-markup-order-product";
 
 export function showDetailsOrder(element, Orders) {
   const sectionMainInfo = document.querySelector("section.order__main-info .wrapper");
