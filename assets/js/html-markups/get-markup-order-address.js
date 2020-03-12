@@ -1,6 +1,9 @@
 export function getMarkupOrderAddress(order) {  
   return `
-  <h4 class="order__address-heading address-processor-heading">Shipping Address</h4>
+  <div class="order__address-header"> 
+    <h4 class="order__address-heading address-processor-heading">Shipping Address</h4>
+    <div class="button-edit-display">Edit</div>
+  </div>
   <ul class="order__address-list">
       <div class="order__address-column column-1">
           <li class="order__address-item">Name: </li>

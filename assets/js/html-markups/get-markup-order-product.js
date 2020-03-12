@@ -19,5 +19,8 @@ export function getMarkupOrderProduct(product) {
       <span class = "value">${product.totalPrice}</span>
       <span class="currency">${product.currency}</span>
     </li>
+    <li class="delete-product">
+      <div class="button-delete-product"></div>
+    </li>
   </div>`;    
 }

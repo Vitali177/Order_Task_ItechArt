@@ -35,8 +35,7 @@
 
                 </div>
                 <div class="order-list__footer">
-                    <div class="order-list__footer-button-filter"></div>
-                    <div class="order-list__footer-button-sort"></div>
+                    <div class="order-list__footer-button-create-order"></div>
                 </div>
             </section>
         </header>
@@ -59,13 +58,16 @@
             <section class="order__line-items">
                 <div class="order__line-items-header">
                     <h4 class="order__line-items-heading">Line Items <span>(0)</span></h4>
-                    <form action="#" class="order__line-items-form">
-                        <input type="search" class="order__line-items-input-search" placeholder="Search">
-                        <div class="order-list__button-search">
-                            <input type="submit" value="">
-                        </div>
-                        <div class="order-list__button-refresh"></div>
-                    </form>
+                    <div class="form-wrapper">
+                        <form action="#" class="order__line-items-form">
+                            <input type="search" class="order__line-items-input-search" placeholder="Search">
+                            <div class="order-list__button-search">
+                                <input type="submit" value="">
+                            </div>
+                            <div class="order-list__button-refresh"></div>
+                        </form>
+                        <div class="order__line-items-button-create-product"></div>
+                    </div>                    
                 </div>                
                 <hr>
                 <ul class="order__line-list">
@@ -74,6 +76,7 @@
                         <li class="unit-price">Unit Price<div class="sort-picture"></div></li>
                         <li class="quantity">Quantity<div class="sort-picture"></div></li>
                         <li class="total">Total<div class="sort-picture"></div></li>
+                        <li class="delete-product"></li>
                     </div>
                     <div class="wrapper">
                         
@@ -82,7 +85,10 @@
             </section>
         </main>
         <footer class="footer">
-            <img src="./assets/img/message.png" alt="message" title="message">
+            <div class="footer__delete-order">
+                <div class="footer__button-delete-order"></div>
+                <p>Delete Order</p>
+            </div>            
         </footer>
     </div> 
     <script src="./dist/main.js"></script> 

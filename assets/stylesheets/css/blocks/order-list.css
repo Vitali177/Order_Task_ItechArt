@@ -174,28 +174,12 @@
   justify-content: flex-end;
 }
 
-.order-list__footer-button-filter {
+.order-list__footer-button-create-order {
   width: 30px;
   height: 30px;
-  background: url("../../../img/filter.png") center center no-repeat no-repeat;
+  background: url("../../../img/create-order.png") center center no-repeat no-repeat;
   background-size: 50%;
   cursor: pointer;
-}
-
-.order-list__footer-button-sort {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  color: #FFFFFF;
-  cursor: pointer;  
-}
-
-.order-list__footer-button-sort::before {
-  position: absolute;
-  content: "[\2261]";
-  top: 5px;
-  left: 5px;
-  font-size: 17px;
 }
 
 @media screen and (max-width: 1075px) {
