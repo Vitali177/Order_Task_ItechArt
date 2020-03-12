@@ -6,6 +6,10 @@ export function createMarkupAllOrdersInList(Orders) {
   let markup = "";
 
   numberOfOrders.innerHTML = `(${Orders.length})`;  
+
+  if (!Orders.length) {
+    markup = `<div class="no-orders">No orders available</div>`;
+  }
   Orders.forEach(order => markup += getMarkupOrderInList(order));
 
   orderListMain.innerHTML = markup;
