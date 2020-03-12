@@ -104,6 +104,7 @@
 
 .order .tab--selected {
   display: block;
+  padding-bottom: 10px;
 }
 
 .order__address {
@@ -405,9 +406,9 @@ input.is-modify:focus {
     height: 100%;
   }
 
-  .order__address, .order__processor {
+  .order .tab--selected {
     min-height: 325px;
-    padding: 0;
+    padding: 0 0 15px 0;
   }
 
   .order__address-heading, .address-processor-heading {
