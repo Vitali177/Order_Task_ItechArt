@@ -85,8 +85,8 @@
 .order__button--selected::before {
   content: "";
   position: absolute;
-  top: 44px;
-  height: 1px;
+  top: 43px;
+  height: 2px;
   width: 100%;
   background-color: var(--primary-blue);
   cursor: default;
@@ -114,7 +114,7 @@
 }
 
 .order__address-header {
-  margin: 20px 0 0 10px;
+  padding: 20px 0 0 10px;
   padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
@@ -123,14 +123,14 @@
 
 .button-edit-display {
   height: 35px;
-  width: 60px;
+  width: 70px;
   margin-right: 10px;
   background-color: var(--secondary-gray);
   border-radius: 20px;
   cursor: pointer;
 }
 
-.button-edit-display:hover {
+.order .button-edit-display--active {
   color: var(--primary-white);
   background-color: var(--primary-blue);
 }
@@ -160,6 +160,16 @@
   color: var(--primary-gray);
 }
 
+.column-1 .order__address-item {
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.column-2 {
+  flex: 1;
+}
+
 .order__address-item {
   margin-bottom: 5px;
   font-size: 14px;
@@ -173,6 +183,28 @@
 .order__address-mobile-list li {
   margin: 15px 0 2px 0;
   color: var(--primary-gray);
+}
+
+.order__address-item input, .order__address-mobile-list input {
+  outline: none;
+  border: 1px solid transparent;
+  font-weight: 600;
+  width: 80%;
+  padding: 3px;
+  cursor: inherit;
+}
+
+.order__address-mobile-list input {
+  width: 100%;
+  font-size: 15px;
+}
+
+.order__address-item input.is-modify, .order__address-mobile-list input.is-modify {
+  border: 1px solid var(--primary-blue);
+}
+
+input.is-modify:focus {
+  border: 1px solid var(--primary-red);
 }
 
 /* processor block */
@@ -388,6 +420,7 @@
 
   .order__address-mobile-list {
     display: block;
+    width: calc(100% - 40px);
     margin: 0 20px;
   }
   
@@ -435,13 +468,11 @@
   .order__line-list-row {
     flex-direction: column;
     align-items: flex-start;
+    padding-left: 20px;
   }
 
-  .order__line-list-row .product, 
-  .order__line-list-row .unit-price, 
-  .order__line-list-row .quantity, 
-  .order__line-list-row .total {
-    padding-left: 20px;
+  .order__line-list-row .product {
+    padding: 0;
   }
 
   .order__line-list-row .unit-price, 

@@ -5,6 +5,7 @@ import { searchProducts } from "./search-products";
 import { sortingProducts } from "./sorting-products";
 import { clearSettingsToDefault } from "./clear-settings-to-default";
 import { createMarkupAllOrdersInList } from "./create-markup-all-orders-in-list";
+import { modifyOrderInfo } from "./modify-order-info";
 
 export function addEventListeners() {
   const tabletWidth = 1075;
@@ -18,6 +19,7 @@ export function addEventListeners() {
   
   const orderButtons = document.querySelector(".order__buttons");
 
+  const orderMain = document.querySelector("main.order");
   const sectionOrderAddress = document.querySelector("section.order__address");
   const sectionOrderProcessor = document.querySelector("section.order__processor");
 
@@ -87,6 +89,12 @@ export function addEventListeners() {
   listOfProductsHeader.addEventListener("click", (e) => { //  event delegation  
     if (e.target.classList.contains("sort-picture")) {
       sortingProducts(e.target, Orders);
+    }
+  });
+
+  orderMain.addEventListener("click", (e) => {
+    if (e.target.classList.contains("button-edit-display")) {
+      modifyOrderInfo(e.target);
     }
   });
 }
