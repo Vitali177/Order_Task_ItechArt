@@ -349,7 +349,7 @@ input.is-modify:focus {
   width: 30px;
   margin-right: 30px;
   background: url("../../../img/delete-product.png") center center no-repeat no-repeat;
-  background-size: 60%;
+  background-size: 70%;
   cursor: pointer;
 }
 

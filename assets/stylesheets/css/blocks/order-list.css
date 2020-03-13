@@ -15,7 +15,7 @@
 }
 
 .order-list__header {
-  height: 55px;
+  min-height: 80px;
   border-bottom: 1px solid var(--primary-gray);
 
   display: flex;
@@ -191,5 +191,16 @@
   .order-list--hidden {
     display: block;
     transform: translateX(-255px);
+  }
+}
+
+@media screen and (max-width: 580px) {
+  
+  .order-list__form .order-list__button-refresh {
+    right: 7px;
+  }
+
+  .order-list__form .order-list__button-search {
+    right: 30px;
   }
 }
