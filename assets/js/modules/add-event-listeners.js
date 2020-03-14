@@ -8,6 +8,7 @@ import { createMarkupAllOrdersInList } from "./create-markup-all-orders-in-list"
 import { modifyOrderInfo } from "./modify-order-info";
 import { deleteProduct } from "./delete-product";
 import { deleteOrder } from "./delete-order"; 
+import { getMarkupCreateProductForm } from "../html-markups/get-markup-create-product-form";
 
 export function addEventListeners() {
   const tabletWidth = 1075;
@@ -15,6 +16,7 @@ export function addEventListeners() {
   const buttonBack = document.querySelector(".order-list__button-back");
   const headerButton = document.querySelector(".header__button");
   const footerDeleteOrderButton = document.querySelector(".footer__delete-order");
+  const buttonCreateProduct = document.querySelector(".order__line-items-button-create-product");
 
   const contentWrapper = document.querySelector(".content-wrapper");
   const orderList = document.querySelector(".order-list");
@@ -109,4 +111,31 @@ export function addEventListeners() {
   });
 
   footerDeleteOrderButton.addEventListener("click", deleteOrder);
+
+  buttonCreateProduct.addEventListener("click", () => {
+    document.querySelector(".content-wrapper").classList.add("content-wrapper--blurred");
+    document.body.classList.add("blocked");
+
+    document.body.insertAdjacentHTML("beforeend", getMarkupCreateProductForm());
+  });
+
+  document.body.addEventListener("click", (e) => {
+
+    function hiddenForm() {
+      document.querySelector(".content-wrapper").classList.remove("content-wrapper--blurred");
+      document.body.classList.remove("blocked");
+
+      const createProductForm = document.querySelector(".wrapper-product-form");
+      document.body.removeChild(createProductForm);
+    }
+
+    if (e.target.classList.contains("submit-create-order")) {
+      e.preventDefault();
+      hiddenForm();
+      // ! Create order
+    }
+    else if (e.target.classList.contains("cancel-create-order")) {
+      hiddenForm();
+    }
+  });
 }
