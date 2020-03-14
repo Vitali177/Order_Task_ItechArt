@@ -10,5 +10,10 @@ export function deleteProduct(button) {
   wrapperOfProducts.removeChild(product);
   numberOfProducts.innerHTML = `(${+(numberOfProducts.innerHTML.slice(1, -1)) - 1})`;
 
+  // If there are no products after delete last product
+  if (!wrapperOfProducts.querySelectorAll(".order__line-list-row").length) {
+    wrapperOfProducts.innerHTML = `<div class="no-products">Products not found</div>`;
+  }
+
   // ! Удалить на сервере
 }
