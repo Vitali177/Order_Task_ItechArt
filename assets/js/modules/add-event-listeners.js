@@ -6,12 +6,15 @@ import { sortingProducts } from "./sorting-products";
 import { clearSettingsToDefault } from "./clear-settings-to-default";
 import { createMarkupAllOrdersInList } from "./create-markup-all-orders-in-list";
 import { modifyOrderInfo } from "./modify-order-info";
+import { deleteProduct } from "./delete-product";
+import { deleteOrder } from "./delete-order"; 
 
 export function addEventListeners() {
   const tabletWidth = 1075;
 
   const buttonBack = document.querySelector(".order-list__button-back");
   const headerButton = document.querySelector(".header__button");
+  const footerDeleteOrderButton = document.querySelector(".footer__delete-order");
 
   const contentWrapper = document.querySelector(".content-wrapper");
   const orderList = document.querySelector(".order-list");
@@ -28,6 +31,7 @@ export function addEventListeners() {
   const searchFromProductsTable = document.querySelector(".order__line-items-input-search");
   const imageSearchFromProductsTable = document.querySelector(".order__line-items-form .order-list__button-search");
 
+  const listOfProducts = document.querySelector(".order__line-list");
   const listOfProductsHeader = document.querySelector(".order__line-list-row--headline");
 
   buttonBack.addEventListener("click", () => {
@@ -97,4 +101,12 @@ export function addEventListeners() {
       modifyOrderInfo(e.target);
     }
   });
+
+  listOfProducts.addEventListener("click", (e) => {
+    if (e.target.classList.contains("button-delete-product")) {
+      deleteProduct(e.target);
+    }
+  });
+
+  footerDeleteOrderButton.addEventListener("click", deleteOrder);
 }
