@@ -46,6 +46,7 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
+  overflow: auto;
 }
 
 .pop-up-form {
