@@ -9,6 +9,7 @@ import { modifyOrderInfo } from "./modify-order-info";
 import { deleteProduct } from "./delete-product";
 import { deleteOrder } from "./delete-order"; 
 import { getMarkupCreateProductForm } from "../html-markups/get-markup-create-product-form";
+import { getMarkupCreateOrderForm } from "../html-markups/get-markup-create-order-form";
 
 export function addEventListeners() {
   const tabletWidth = 1075;
@@ -17,6 +18,7 @@ export function addEventListeners() {
   const headerButton = document.querySelector(".header__button");
   const footerDeleteOrderButton = document.querySelector(".footer__delete-order");
   const buttonCreateProduct = document.querySelector(".order__line-items-button-create-product");
+  const buttonCreateOrder = document.querySelector(".order-list__footer-button-create-order");
 
   const contentWrapper = document.querySelector(".content-wrapper");
   const orderList = document.querySelector(".order-list");
@@ -120,23 +122,37 @@ export function addEventListeners() {
     document.body.insertAdjacentHTML("beforeend", getMarkupCreateProductForm());
   });
 
+  buttonCreateOrder.addEventListener("click", () => {
+    document.querySelector(".content-wrapper").classList.add("content-wrapper--blurred");
+    document.body.classList.add("blocked");
+    window.scrollTo(0, 0); // Page up
+
+    document.body.insertAdjacentHTML("beforeend", getMarkupCreateOrderForm());
+  });
+
   document.body.addEventListener("click", (e) => {
 
     function hiddenForm() {
       document.querySelector(".content-wrapper").classList.remove("content-wrapper--blurred");
       document.body.classList.remove("blocked");
 
-      const createProductForm = document.querySelector(".wrapper-product-form");
-      document.body.removeChild(createProductForm);
+      const popUpForm = document.querySelector(".wrapper-pop-up-form");
+      document.body.removeChild(popUpForm);
     }
 
-    if (e.target.classList.contains("submit-create-order")) {
+    if (e.target.classList.contains("submit-create-product")) {
+      e.preventDefault();
+      hiddenForm();
+      // ! Create product
+    }
+    else if (e.target.classList.contains("submit-create-order")) {
       e.preventDefault();
       hiddenForm();
       // ! Create order
     }
-    else if (e.target.classList.contains("cancel-create-order")) {
+    else if (e.target.classList.contains("product-cancel-button") || 
+             e.target.classList.contains("order-cancel-button")) {
       hiddenForm();
-    }
+    }     
   });
 }

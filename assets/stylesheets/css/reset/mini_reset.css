@@ -40,7 +40,7 @@ h3 {
   opacity: .1;
 }
 
-.wrapper-product-form {
+.wrapper-pop-up-form {
   min-height: 100vh;
   min-width: 100vw;
   position: absolute;
@@ -48,33 +48,48 @@ h3 {
   left: 0;
 }
 
-.create-product-form {
+.pop-up-form {
   position: absolute;
-  z-index: 1;
-  width: 600px;
-  height: 350px;
-  left: calc((100% - 600px) / 2);
-  top: calc((100% - 350px) / 2);
+  z-index: 1; 
   padding: 20px 20px;
   background: var(--first-gradient-color);
 }
 
-.create-product-form form {  
+.create-product-form {
+  width: 600px;
+  height: 315px;
+  left: calc((100% - 600px) / 2);
+  top: calc((100% - 315px) / 2);
+}
+
+.create-order-form {
+  width: 600px;
+  height: 725px;
+  left: calc((100% - 600px) / 2);
+  top: 0px;
+}
+
+.pop-up-form form {  
   display: flex;
   flex-direction: column;
 }
 
-.create-product-form h3 {
+.pop-up-form h3 {
   font-size: 20px;
   text-align: center;
 }
 
-.create-product-form input {
-  margin-top: 15px;
+.pop-up-form h4 {
+  padding-top: 10px;
+  font-weight: 300;
+}
+
+.pop-up-form input {
+  margin-top: 10px;
   padding: 3px 10px;
 }
 
-.cancel-create-order {
+.pop-up-form .cancel-button {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -85,11 +100,11 @@ h3 {
   cursor: pointer;
 }
 
-.cancel-create-order:hover {
+.pop-up-form .cancel-button:hover {
   background-color: var(--secondary-gray);
 }
 
-.create-product-form .submit-create-order {
+.pop-up-form input[type="submit"] {
   height: 32px;
   width: 120px;
   padding: 0;
@@ -99,7 +114,7 @@ h3 {
   cursor: pointer;
 }
 
-.create-product-form .submit-create-order:hover {
+.pop-up-form input[type="submit"]:hover {
   border: 2px solid var(--primary-blue);
 }
 
@@ -112,7 +127,7 @@ h3 {
 
 @media(max-width: 580px) {
   
-  .create-product-form {
+  .pop-up-form {
     width: 100%;
     left: 0;
   }
