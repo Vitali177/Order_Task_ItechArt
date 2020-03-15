@@ -115,6 +115,7 @@ export function addEventListeners() {
   buttonCreateProduct.addEventListener("click", () => {
     document.querySelector(".content-wrapper").classList.add("content-wrapper--blurred");
     document.body.classList.add("blocked");
+    window.scrollTo(0, 0); // Page up
 
     document.body.insertAdjacentHTML("beforeend", getMarkupCreateProductForm());
   });
