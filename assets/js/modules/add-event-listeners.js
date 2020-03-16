@@ -29,6 +29,7 @@ export function addEventListeners() {
   const orderMain = document.querySelector("main.order");
   const sectionOrderAddress = document.querySelector("section.order__address");
   const sectionOrderProcessor = document.querySelector("section.order__processor");
+  const sectionOrderMap = document.querySelector("section.order__map");
 
   const searchFromOrdersList = document.querySelector(".order-list__input-search");
   const imageSearchFromOrdersList = document.querySelector(".order-list__form .order-list__button-search");
@@ -80,6 +81,8 @@ export function addEventListeners() {
         sectionOrderAddress.classList.add("tab--selected");
       } else if (e.target.classList.contains("order__button-processor")) {
         sectionOrderProcessor.classList.add("tab--selected");
+      } else if (e.target.classList.contains("order__button-map")) {
+        sectionOrderMap.classList.add("tab--selected");
       }
     }
   });
