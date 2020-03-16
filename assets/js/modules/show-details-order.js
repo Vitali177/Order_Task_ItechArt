@@ -3,6 +3,7 @@ import { getMarkupOrderAddress } from "../html-markups/get-markup-order-address"
 import { getMarkupOrderCustomer } from "../html-markups/get-markup-order-customer"; 
 import { getMarkupOrderMap } from "../html-markups/get-markup-order-map";
 import { getMarkupOrderProduct } from "../html-markups/get-markup-order-product";
+import { generateYandexMap } from "./generate-yandex-map";
 
 export function showDetailsOrder(element, Orders) {
   const sectionMainInfo = document.querySelector("section.order__main-info .wrapper");
@@ -27,6 +28,7 @@ export function showDetailsOrder(element, Orders) {
   sectionOrderAddress.innerHTML = getMarkupOrderAddress(order);
   sectionOrderProcessor.innerHTML = getMarkupOrderCustomer(order);
   sectionOrderMap.innerHTML = getMarkupOrderMap(order);
+  generateYandexMap();
 
   let markup = "";
   order.products.forEach((product) => {

@@ -260,6 +260,10 @@ input.is-modify:focus {
   border-bottom: 1px solid var(--secondary-blue);
 }
 
+#map {
+  width: 100%;
+  height: 300px;
+}
 
 /* line-items block */
 
