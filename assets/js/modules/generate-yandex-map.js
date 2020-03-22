@@ -1,7 +1,7 @@
-export function generateYandexMap() {
+export function generateYandexMap(lat, lng) {
   ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
-            center: [53.900000, 27.566670],
+            center: [lat, lng],
             zoom: 7
         }, {
             searchControlProvider: 'yandex#search'
