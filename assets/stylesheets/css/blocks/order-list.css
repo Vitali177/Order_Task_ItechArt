@@ -195,6 +195,30 @@
 }
 
 @media screen and (max-width: 580px) {
+
+  .order-list {
+    width: 100%;
+  }
+
+  .order-list--hidden {
+    transform: translateX(-100%);
+  }
+
+  .order-list__item {
+    padding: 0 20px;
+  }
+
+  .order-list__item-order {
+    font-size: 21px;
+  }
+
+  .order-list__item-ordered-date {
+    font-size: 17px;
+  }
+
+  .order-list__item-order-time, .order-list__item-customer, .order-list__item-shipped {
+    font-size: 14px;
+  }
   
   .order-list__form .order-list__button-refresh {
     right: 7px;
@@ -202,5 +226,9 @@
 
   .order-list__form .order-list__button-search {
     right: 30px;
+  }
+
+  .order-list__footer {
+    width: 100%;
   }
 }
